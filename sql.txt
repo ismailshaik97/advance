@@ -1,0 +1,102 @@
+
+                 FIRST PROJECT FOR PRACTICE
+          https://github.com/mahesh577-dell/iflipkart.git
+----------------------------------------------------------------------------
+   
+ DEVELOPERS 
+
+   --> they will write the code and store in GITHUB
+   --> after completing code , project is ready in github 
+
+  example: username:mahesh577-dell 
+           password:*********
+
+     -->www.github.com 
+
+      github url--> https://github.com/mahesh577-dell/real.git
+
+
+ --> login into ec2 machine 
+ --> git clone https://github.com/mahesh577-dell/real.git
+ --> real folder will appear in ubuntu 
+ -->cd real 
+ --> ls 
+ -->all project files will appear 
+ --> build the code using--> mvn install command 
+
+ --> build sucess or build failure 
+ --> target folder will be created 
+ --> cd target 
+ --> you will see warfile/jar file 
+ --> pwd command use 
+ --> /home/ubuntu/real/target/mahesh123.war --> source loaction
+
+              -------BUILD PROCESS COMPLETED-------------
+
+DEPLOYMENT PROCESS
+-------------------
+
+ 1ST step --> download tomcat server 
+          --> go to google search and type download tomcat  
+          --> click on first link 
+          --> Right click on tar.gz file and copy link adress 
+          -->https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz
+          -->go to ec2 server  
+          --> outside 
+          --> wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz
+
+
+           --> tomcat server will download  --> ls 
+           --> apache-tomcat-9.0.68.tar.gz
+           --> extarct the tar file 
+           
+           --> tar -zxvf apache-tomcat-9.0.68.tar.gz
+           --> tar file will be extracted & folder will create 
+           --> apache-tomcat-9.0.68
+           --> cd apache-tomcat-9.0.68
+           --> ls command 
+           --> BUILDING.txt     LICENSE  README.md      RUNNING.txt  conf  logs  webapps
+               CONTRIBUTING.md  NOTICE   RELEASE-NOTES  bin          lib   temp  work
+
+           --> cd webapps
+           --> pwd
+           --> /home/ubuntu/apache-tomcat-9.0.68/webapps --> destination
+           --> use secure copy command with source & destination 
+cd
+      example: scp /home/ubuntu/real/target/mahesh123.war /home/ubuntu/apache-tomcat-9.0.68/webapps
+  
+
+
+      --> now mahesh123.war will be pasted and appears in webapps
+      --> cd .. 
+      --> cd bin
+      --> ls
+ bootstrap.jar       ciphers.sh                    daemon.sh     setclasspath.bat  startup.sh            version.bat
+catalina-tasks.xml  commons-daemon-native.tar.gz  digest.bat    setclasspath.sh   tomcat-juli.jar       version.sh
+catalina.bat        commons-daemon.jar            digest.sh     shutdown.bat      tomcat-native.tar.gz
+catalina.sh         configtest.bat                makebase.bat  shutdown.sh       tool-wrapper.bat
+ciphers.bat         configtest.sh                 makebase.sh   startup.bat       tool-wrapper.sh
+      
+
+ --> now start the tomcat server --> ./startup.sh 
+
+ --> tomcated started.............
+
+                -----------deployment process------------
+
+
+   how to check output in browser 
+
+   1.public ip address 2. port:8080 3.war-file-name 
+
+  http://publicipaddress:portnumber/warfile 
+
+ example: http://18.181.179.81:8080/mahesh123
+   
+       
+
+
+
+
+
+ 
